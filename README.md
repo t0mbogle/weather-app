@@ -1,5 +1,5 @@
 # Weather App
-This is a front-end project ulitising React to display the weather in various locations.
+This is a front-end project ulitising React to display the weather for various days.
 
 ### Getting Started with Create React App
 

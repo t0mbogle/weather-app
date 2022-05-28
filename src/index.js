@@ -1,4 +1,5 @@
 import React from "react";
+// Imports the react library so it is in scope
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
