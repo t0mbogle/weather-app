@@ -5,6 +5,7 @@ import LocationDetails from "./LocationDetails";
 
 function App({ location }) {
   const { city, country } = location;
+  // destructures prop
   return (
     <div className="App">
       <h1>Weather App</h1>
