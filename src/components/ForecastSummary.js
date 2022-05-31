@@ -8,9 +8,11 @@ function ForecastSummary(props) {
     // content between the div tags is referencing the forcast.json file.
     <div className="forecast-summary">
       <div className="forecast-summary_date">{date}</div>
-      <div className="forecast-summary_description">{icon}</div>
-      <div className="forecast-summary_icon">{temperature.max}&deg;C</div>
-      <div className="forecast-summary_temperature">{description}</div>
+      <div className="forecast-summary_icon" data-testid="forecast-icon">
+        {icon}
+      </div>
+      <div className="forecast-summary_temperature">{temperature.max}˚C</div>
+      <div className="forecast-summary_description">{description}</div>
     </div>
   );
 }

@@ -11,17 +11,18 @@ exports[`ForecastSummary renders correctly 1`] = `
       1111111
     </div>
     <div
-      class="forecast-summary_description"
+      class="forecast-summary_icon"
+      data-testid="forecast-icon"
     >
       stubIcon
     </div>
     <div
-      class="forecast-summary_icon"
+      class="forecast-summary_temperature"
     >
-      22°C
+      22˚C
     </div>
     <div
-      class="forecast-summary_temperature"
+      class="forecast-summary_description"
     >
       Stub description
     </div>
