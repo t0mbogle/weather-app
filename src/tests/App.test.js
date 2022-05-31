@@ -11,4 +11,4 @@ describe("App", () => {
   });
 });
 
-// Make sure to update this test file whenever App gets updated
+// Make sure to update this test file whenever '<App />' gets updated
