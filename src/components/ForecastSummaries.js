@@ -8,6 +8,8 @@ function ForecastSummaries({ forecasts }) {
     <div className="forecast-summaries">
       {forecasts.map((forecast) => (
         <ForecastSummary
+        // key is set to the forecast.date as this is should be unique to each instance of forecast
+          key={forecast.date}
           date={forecast.date}
           description={forecast.description}
           icon={forecast.icon}
