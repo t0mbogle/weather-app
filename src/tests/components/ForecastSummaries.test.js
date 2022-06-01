@@ -30,4 +30,13 @@ describe("ForecastSummaries", () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+  // Outer div has testid of "forecast-summary", as two objects were passed into the
+  // ForecastSummaries component this is what is being tested.
+  it("renders the correct number of ForecastSummary instances", () => {
+    const { getAllByTestId } = render(
+      <ForecastSummaries forecasts={validProps} />
+    );
+
+    expect(getAllByTestId("forecast-summary")).toHaveLength(2);
+  });
 });
