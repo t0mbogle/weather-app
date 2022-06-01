@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
+import React from "react";
 import PropTypes from "prop-types";
 import "../styles/App.css";
 import ForecastSummaries from "./ForecastSummaries";
@@ -8,7 +8,7 @@ function App({ location, forecasts }) {
   const { city, country } = location;
   // destructures prop
   return (
-    <div className="App">
+    <div className="weather-app">
       <h1>Weather App</h1>
       <LocationDetails city={city} country={country} />
       <ForecastSummaries forecasts={forecasts} />
