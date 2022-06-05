@@ -6,6 +6,7 @@ import WeatherIcon from "react-icons-weather";
 function ForecastSummary(props) {
   const { date, description, icon, temperature } = props;
   const formattedDate = new Date(date).toDateString();
+  // converts the numerical data from forecast.json into readable dates.
   return (
     // content between the div tags is referencing the forcast.json file.
     <div className="forecast-summary" data-testid="forecast-summary">

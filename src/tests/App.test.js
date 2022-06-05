@@ -5,7 +5,13 @@ import forecast from "../data/forcast.json";
 
 describe("App", () => {
   it("renders App component correctly", () => {
-    render(<App location={forecast.location} forecasts={forecast.forecasts} />);
+    render(
+      <App
+        location={forecast.location}
+        forecasts={forecast.forecasts}
+        forecast={forecast.forecasts[0]}
+      />
+    );
     const h1Element = screen.getByText(/Manchester, UK/i);
 
     expect(h1Element).toBeInTheDocument();
