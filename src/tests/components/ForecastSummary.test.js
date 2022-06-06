@@ -11,6 +11,7 @@ describe("ForecastSummary", () => {
       min: 12,
       max: 22,
     },
+    onselect: () => {}, // Pass the prop as an empty function
   };
 
   it("renders correctly", () => {
@@ -22,6 +23,7 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onselect}
       />
     );
     // toMatchSnapshot ensures that a value matches the most recent snapshot.
@@ -36,6 +38,7 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onselect}
       />
     );
 
