@@ -9,13 +9,21 @@ function App({ location, forecasts }) {
   const [selectedDate, setSelectedDate] = useState(forecasts[0].date); // Defaulted to the the first forecast date
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
-  );
-  // Searches through the array of forecasts and returns the matching value
+  ); // Searches through the array of forecasts and returns the matching value
+
+  const handleForecastSelect = (date) => {
+    setSelectedDate(date);
+  };
+
   return (
     <div className="weather-app">
       <h1>Weather App</h1>
       <LocationDetails city={location.city} country={location.country} />
-      <ForecastSummaries forecasts={forecasts} />
+      <ForecastSummaries
+        forecasts={forecasts}
+        onForecastSelect={handleForecastSelect}
+        // This now gives ForecastSummaries component access to the prop 'onForecastSelect'
+      />
       <ForecastDetails forecast={selectedForecast} />
     </div>
   );
