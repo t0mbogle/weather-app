@@ -7,11 +7,20 @@ function ForecastDetails({ forecast }) {
 
   return (
     <div className="forcast-details">
-      <div className="forecast-details_date">{formattedDate}</div>
-      <div className="forecast-details_temp">{temperature.min}˚C</div>
-      <div className="forecast-details_temp">{temperature.max}˚C</div>
-      <div className="forecast-details_humidity">{humidity}</div>
+      <div className="forecast-details_date">
+        <b>Date:</b> {formattedDate}
+      </div>
+      <div className="forecast-details_temp">
+        <b>Max Temperature:</b> {temperature.max}˚C
+      </div>
+      <div className="forecast-details_temp">
+        <b>Min Temperature:</b> {temperature.min}˚C
+      </div>
+      <div className="forecast-details_humidity">
+        <b>Humidity:</b> {humidity}
+      </div>
       <div className="forecast-details_wind">
+        <b>Wind:</b>
         {wind.speed}
         {wind.direction}
       </div>
@@ -22,6 +31,7 @@ function ForecastDetails({ forecast }) {
 export default ForecastDetails;
 
 ForecastDetails.propTypes = {
+  // Error in console: failed prop type
   forecast: PropTypes.shape(
     PropTypes.shape({
       date: PropTypes.string,
