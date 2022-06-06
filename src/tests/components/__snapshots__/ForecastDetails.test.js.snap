@@ -41,9 +41,9 @@ exports[`ForecastDetails renders correctly 1`] = `
       class="forecast-details_wind"
     >
       <b>
-        Wind: 
+        Wind:
       </b>
-      60ne
+       60mph ne
     </div>
   </div>
 </DocumentFragment>
