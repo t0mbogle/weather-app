@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../styles/App.css";
 import ForecastSummaries from "./ForecastSummaries";
@@ -6,14 +6,17 @@ import LocationDetails from "./LocationDetails";
 import ForecastDetails from "./ForecastDetails";
 
 function App({ location, forecasts }) {
-  const { city, country } = location;
-  // destructures prop
+  const [selectedDate, setSelectedDate] = useState(forecasts[0].date); // Defaulted to the the first forecast date
+  const selectedForecast = forecasts.find(
+    (forecast) => forecast.date === selectedDate
+  );
+  // Searches through the array of forecasts and returns the matching value
   return (
     <div className="weather-app">
       <h1>Weather App</h1>
-      <LocationDetails city={city} country={country} />
+      <LocationDetails city={location.city} country={location.country} />
       <ForecastSummaries forecasts={forecasts} />
-      <ForecastDetails forecast={forecasts[0]} />
+      <ForecastDetails forecast={selectedForecast} />
     </div>
   );
 }
