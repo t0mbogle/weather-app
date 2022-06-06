@@ -35,13 +35,13 @@ exports[`ForecastDetails renders correctly 1`] = `
       <b>
         Humidity:
       </b>
-       80
+       80%
     </div>
     <div
       class="forecast-details_wind"
     >
       <b>
-        Wind:
+        Wind: 
       </b>
       60ne
     </div>
