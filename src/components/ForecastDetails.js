@@ -20,9 +20,7 @@ function ForecastDetails({ forecast }) {
         <b>Humidity:</b> {humidity}%
       </div>
       <div className="forecast-details_wind">
-        <b>Wind: </b>
-        {wind.speed}
-        {wind.direction}
+        <b>Wind:</b> {wind.speed}mph {wind.direction}
       </div>
     </div>
   );

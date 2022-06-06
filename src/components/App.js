@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../styles/App.css";
-import axios from "axios";
 import ForecastSummaries from "./ForecastSummaries";
 import LocationDetails from "./LocationDetails";
 import ForecastDetails from "./ForecastDetails";
+import getForecast from "../requests/getForecast";
 
 // Change this to const ES6 syntax after other changes
 function App() {
@@ -19,19 +19,9 @@ function App() {
     setSelectedDate(date);
   };
 
-  const getForecast = () => {
-    const endpoint = "https://mcr-codes-weather-app.herokuapp.com/forecast";
-
-    axios.get(endpoint).then((response) => {
-      setSelectedDate(response.data.forecasts[0].date);
-      setForecasts(response.data.forecasts);
-      setLocation(response.data.location);
-    });
-  }; // HTTP GET request through axios
-
   useEffect(() => {
-    getForecast();
-  }, []);
+    getForecast(setSelectedDate, setForecasts, setLocation);
+  }, []); // Importing axios HTTP request from requests/getForecast
 
   return (
     <div className="weather-app">
