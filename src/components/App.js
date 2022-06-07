@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../styles/App.css";
-import ForecastSummaries from "./ForecastSummaries";
 import LocationDetails from "./LocationDetails";
+import SearchForm from "./SearchForm";
+import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
 import getForecast from "../requests/getForecast";
 
@@ -10,6 +11,11 @@ function App() {
   const [forecasts, setForecasts] = useState([]);
   const [location, setLocation] = useState({ city: "", country: "" });
   const [selectedDate, setSelectedDate] = useState(0); // App no longer recieves forecasts so 0 is the new default value
+  const [searchText, setSearchText] = useState("");
+
+  useEffect(() => {
+    getForecast(searchText, setSelectedDate, setForecasts, setLocation);
+  }, [searchText]); // Renders searchText(defualt) as dependancy array
 
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
@@ -19,14 +25,19 @@ function App() {
     setSelectedDate(date);
   };
 
-  useEffect(() => {
+  const handleCitySearch = () => {
     getForecast(setSelectedDate, setForecasts, setLocation);
-  }, []); // Importing axios HTTP request from requests/getForecast
+  }; // Makes another HTTP request to getForecast
 
   return (
     <div className="weather-app">
       <h1>Weather App</h1>
       <LocationDetails city={location.city} country={location.country} />
+      <SearchForm
+        searchText={searchText}
+        setSearchText={setSearchText}
+        onSubmit={handleCitySearch}
+      />
       <ForecastSummaries
         forecasts={forecasts}
         onForecastSelect={handleForecastSelect}
