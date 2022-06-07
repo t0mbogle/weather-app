@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import ForecastDetails from "../../components/ForecastDetails";
-import ForecastSummaries from "../../components/ForecastSummaries";
 
 describe("ForecastDetails", () => {
   const validProps = {
