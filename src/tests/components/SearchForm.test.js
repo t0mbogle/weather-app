@@ -20,4 +20,17 @@ describe("SearchForm", () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it("checks if input and button display the correct text", () => {
+    const { getByDisplayValue, getByText } = render(
+      <SearchForm
+        searchText={validProps.searchText}
+        setSearchText={validProps.setSearchText}
+        onSubmit={validProps.onSubmit}
+      />
+    );
+
+    expect(getByDisplayValue("Manchester")).toBeInstanceOf(HTMLInputElement);
+    expect(getByText("Search")).toBeInstanceOf(HTMLButtonElement);
+  });
 });
