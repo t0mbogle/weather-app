@@ -15,7 +15,8 @@ function App() {
 
   useEffect(() => {
     getForecast(searchText, setSelectedDate, setForecasts, setLocation);
-  }, [searchText]); // Renders searchText(defualt) as dependancy array
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Renders searchText(defualt) as dependancy array
 
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
@@ -25,8 +26,9 @@ function App() {
     setSelectedDate(date);
   };
 
-  const handleCitySearch = () => {
-    getForecast(setSelectedDate, setForecasts, setLocation);
+  const handleCitySearch = (event) => {
+    event.preventDefault(); // Disables the action of calling the defualt location onSubmit
+    getForecast(searchText, setSelectedDate, setForecasts, setLocation);
   }; // Makes another HTTP request to getForecast
 
   return (
