@@ -12,11 +12,18 @@ function App() {
   const [location, setLocation] = useState({ city: "", country: "" });
   const [selectedDate, setSelectedDate] = useState(0); // App no longer recieves forecasts so 0 is the new default value
   const [searchText, setSearchText] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    getForecast(searchText, setSelectedDate, setForecasts, setLocation);
+    getForecast(
+      searchText,
+      setSelectedDate,
+      setForecasts,
+      setLocation,
+      setErrorMessage
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Renders searchText(defualt) as dependancy array
+  }, []);
 
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
@@ -28,27 +35,38 @@ function App() {
 
   const handleCitySearch = (event) => {
     event.preventDefault(); // Disables the action of calling the defualt location onSubmit
-    getForecast(searchText, setSelectedDate, setForecasts, setLocation);
+    getForecast(
+      searchText,
+      setSelectedDate,
+      setForecasts,
+      setLocation,
+      setErrorMessage
+    );
   }; // Makes another HTTP request to getForecast
 
   return (
     <div className="weather-app">
       <h1>Weather App</h1>
-      <LocationDetails city={location.city} country={location.country} />
+      <LocationDetails
+        city={location.city}
+        country={location.country}
+        errorMessage={errorMessage}
+      />
       <SearchForm
         searchText={searchText}
         setSearchText={setSearchText}
         onSubmit={handleCitySearch}
       />
-      <ForecastSummaries
-        forecasts={forecasts}
-        onForecastSelect={handleForecastSelect}
-        // This now gives ForecastSummaries component access to the prop 'onForecastSelect'
-      />
-      {selectedForecast && (
-        <ForecastDetails
-          forecast={selectedForecast} /* Conditional rendering */
-        />
+
+      {!errorMessage && (
+        <>
+          <ForecastSummaries
+            forecasts={forecasts}
+            onForecastSelect={handleForecastSelect}
+            // This now gives ForecastSummaries component access to the prop 'onForecastSelect'
+          />
+          {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
+        </>
       )}
     </div>
   );
