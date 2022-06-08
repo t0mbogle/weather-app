@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
 body {
-  margin: 0;
   font-family: 'Cutive Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #eceef1;
+  /* background: linear-gradient(45deg ); */
 }
