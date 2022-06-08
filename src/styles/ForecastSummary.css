@@ -1,5 +1,5 @@
 .forecast-summary {
-    border: solid 1px rgb(33, 209, 159);
+    border: solid 1px #4663BE;
     background-color: #dfdfdf;
     text-align: center;
     font-size: 19px;
@@ -10,12 +10,13 @@ i {
     font-size: 50px;
     font-weight: 100;
     padding: 20px 10px 20px 10px;
+    color: #8DBAFE;
 }
 
 .forecast-summary > button {
     font-family: 'Cutive Mono', monospace;
     font-size: 16px;
-    border: solid 1px rgb(33, 209, 159);
+    border: solid 1px #4663BE;
     background-color: #dfdfdf;
     color: black;
     border-radius: 50px;
@@ -24,7 +25,8 @@ i {
 }
 
 .forecast-summary > button:hover {
-    border: solid 1px #028090;
-    background-color: white;
-    color: #037180;
+    border: solid 1px #4663BE;
+    background-color: #4663BE;
+    color: white;
+    font-weight: bold;
 }

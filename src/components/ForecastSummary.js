@@ -16,7 +16,7 @@ function ForecastSummary(props) {
       </div>
       <div className="forecast-summary_temperature">{temperature.max}˚C</div>
       <div className="forecast-summary_description">{description}</div>
-      <button type="button" onClick={() => onSelect(date)}>
+      <button type="button" className="click" onClick={() => onSelect(date)}>
         More Details
       </button>
     </div>
