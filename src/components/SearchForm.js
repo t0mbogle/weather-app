@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/SearchForm.css";
 import PropTypes from "prop-types";
 
 function SearchForm({ searchText, setSearchText, onSubmit }) {
