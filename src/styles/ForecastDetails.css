@@ -1,6 +1,4 @@
 .forcast-details {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
+    line-height: 1.4;
 }

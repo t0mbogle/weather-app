@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-// import "../styles/App.css";
+import "../styles/ForecastSummary.css";
 import React from "react";
 import WeatherIcon from "react-icons-weather";
 
