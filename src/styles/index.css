@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
 
 body {
-  font-family: 'Cutive Mono', monospace;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 100;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #eceef1;
-  /* background: linear-gradient(45deg ); */
+  background: url("../../../../Pictures/images/ferdinand-stohr-iW1WzbuWMcA-unsplash.jpg");
+  background-size: 100% 100vh;
 }

@@ -46,12 +46,14 @@ function App() {
 
   return (
     <div className="weather-app">
-      <h1>Weather App</h1>
-      <LocationDetails
-        city={location.city}
-        country={location.country}
-        errorMessage={errorMessage}
-      />
+      <div className="titles-section">
+        <h1>Weather App</h1>
+        <LocationDetails
+          city={location.city}
+          country={location.country}
+          errorMessage={errorMessage}
+        />
+      </div>
       <SearchForm
         searchText={searchText}
         setSearchText={setSearchText}
